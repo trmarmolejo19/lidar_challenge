@@ -1,8 +1,12 @@
 Lidar filters 
 You have been assigned to write filters to reduce noise in the data coming from a LIDAR sensor attached to your robot. The LIDAR generates scans at a certain rate. Each scan is an array of length N of float values representing distance measurements. N is typically in a range of ~[200, 1000] measurements, and it is fixed. Measured distances are typically in a range of [0.03, 50] meters. Each time a scan is received, it will be passed on to the filters. Each filter object should have an update method, that takes a length-N array of ranges and returns a filtered  l ength-N   array  of  ranges. 
 We want you to write two different filter objects: 
+
+
 ●	A range filter 
 The range filter crops all the values that are below range_min (resp. above range_max), and replaces them with the range_min value (resp. range_max) 
+
+
 ●	A temporal median filter.
 The temporal median filter returns  the  median  o f  the  current  and  the  previous  D   scans: 
 y i(t) = median(x i(t), x i(t − 1), ...  , x i(t − D)) 
